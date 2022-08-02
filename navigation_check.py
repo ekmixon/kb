@@ -63,11 +63,10 @@ def main():
     if contains_dupes(paths):
         print('Warning: Duplicates in Paths!')
         sys.exit(1)
-    missing = set(paths) - set(navs)
-    if missing:
+    if missing := set(paths) - set(navs):
         print('Missing paths from nav:')
         for p in sorted(missing):
-            print('-- {}'.format(p))
+            print(f'-- {p}')
         sys.exit(1)
     sys.exit(0)
 
